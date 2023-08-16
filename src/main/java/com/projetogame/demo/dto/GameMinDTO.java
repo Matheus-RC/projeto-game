@@ -1,6 +1,7 @@
 package com.projetogame.demo.dto;
 
 import com.projetogame.demo.entities.Game;
+import com.projetogame.demo.projections.GameMinProjection;
 
 public class GameMinDTO {
 
@@ -11,6 +12,13 @@ public class GameMinDTO {
     private String shortDescription;
 
     public GameMinDTO(Game x){
+        this.id = x.getId();
+        this.title = x.getTitle();
+        this.year = x.getYear();
+        this.imgUrl = x.getImgUrl();
+        this.shortDescription = x.getShortDescription();
+    }
+    public GameMinDTO(GameMinProjection x){
         this.id = x.getId();
         this.title = x.getTitle();
         this.year = x.getYear();
