@@ -1,4 +1,4 @@
-# Big Game Survey 
+# API REST GAMES
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/Matheus-RC/projeto-game/blob/main/LICENSE) 
 
 # Sobre o projeto
