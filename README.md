@@ -3,7 +3,7 @@
 
 # Sobre o projeto
 
-Esse projeto se trata de uma API Rest onde é possível consultar os games cadastrados, visualizar as listas (agrupamento por tipo de game) e inclui um end-point para reordenar as posições dos games em uma lista. Projeto desenvolvido na **Semana DevSuperior**, evento organizado pela [DevSuperior](https://devsuperior.com "Site da DevSuperior").
+Esse projeto se trata de uma API Rest onde é possível: consultar os games cadastrados, visualizar as listas (agrupamento por tipo de game) e  reordenar as posições dos games em uma lista. Projeto desenvolvido na **Semana DevSuperior**, evento organizado pela [DevSuperior](https://devsuperior.com "Site da DevSuperior").
 
 
 ## Modelo conceitual
@@ -15,10 +15,11 @@ Esse projeto se trata de uma API Rest onde é possível consultar os games cadas
 - Spring Boot
 - JPA / Hibernate
 - Maven
-- H2
+
 
 ## Implantação em produção
 - Banco de dados: Postgresql
+- Banco de teste: H2
 
 # Como executar o projeto
 
@@ -38,6 +39,18 @@ cd demo
 # executar o projeto
 ./mvnw spring-boot:run
 ```
+# End - points
+- (GET) http://localhost:8080/games -> Busca todos os games cadastrados
+- (GET) http://localhost:8080/games/{id_do_game} -> Busca um game específico
+- (GET) http://localhost:8080/list -> Busca as listas de games (tipos)
+- (GET) http://localhost:8080/list/{id_da_lista}/games -> Busca todos os games pertencentes a uma lista específica
+- (POST) http://localhost:8080/list/{id_da_lista}/replacement -> Reordena a posição de um game em uma lista específica
+- - Para isso precisamos enviar no corpo da requisição a posição de origem e a posição de destino do game a ser reposicionado:
+- - - {
+    "sourceIndex":3,
+    "destinationIndex":1
+    }
+
 
 # Autor
 
